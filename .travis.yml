@@ -1,0 +1,16 @@
+language: node_js
+os: osx
+node_js:
+- node
+after_success:
+- yarn build
+before_deploy:
+- cd ./lib
+deploy:
+  provider: heroku
+  api_key:
+    secure: cDiTgdbCuqRwIrKrAV5g8PcWZv5fH/NyXFVmD5p/Scz8HsZPadguPcncVwkjbaaFy5wP+R/hxbprZCG9WVDtxpT1l4umPMV2HhvaoVJHMSeoWi1Higajjrz/ypZ2QPJhFwYTRJcilL9Qo9NLIZ9f0ajA1YH9/J8CUxg7LkiEwGeK5wJ/ccljg+UeQc1NeAIMlvhnZCkLd9PJzrO3UvIYlK6lEi5+6KwDaTMOXw0a/JE0nfOAptQh1t3tdPSL+dWnjFIu/KHgzl2jcBZy1qyoVw0e3bG1NlTF6BLIuNh+mdYxwBgJaeANZuoedI0c/ibQ2Dmipm+CY0mcX5kBjdboh+KbJ69N2rH8ox7A1FfyiWEgdD8oN2tPsYuyvjtcvT3s3nYdGt7kOfpe3Dxs079AD6bQX3ZKEbFySClGrz4kOuDmCbL/OI6keuFxPNwBh6zuyQ2NyNxBG8jAnTJuFgiZKS/K0ryvvRuzZhoi+b/1EJUpHp5d7f4ULYWMuRRrXbUjY7jvn+1OanXwj91+623sEgMMpHVV0Xm4avwzJiZFYmy7ywuFyHqjH4LRjb9NVW/pXBcqxRM4wgmQBuKcAa7y7o9d5frTEoA/6hy/d+bayuVhrNgGGsAp03e8xDO8Q6m1NKh4xpgFNIRLj7gumn25uo3L5Zbzq0ocY0BD0hLae4s=
+  app: letjoshcook
+  on:
+    repo: jgretz/letjoshcook
+  skip_cleanup: 'true'
