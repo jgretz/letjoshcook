@@ -10,6 +10,8 @@ import history from '../history';
 import Routes from './Routes';
 import theme from '../../../styles/theme';
 
+import Menu from './Menu';
+
 const App = () => (
   <Router history={history}>
     <MuiThemeProvider theme={theme}>
@@ -17,6 +19,7 @@ const App = () => (
         <StyledSnackbarProvider>
           <CssBaseline />
 
+          <Menu />
           <Routes />
         </StyledSnackbarProvider>
       </MuiPickersUtilsProvider>
